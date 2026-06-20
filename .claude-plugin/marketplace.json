@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "interface-design",
   "metadata": {
-    "description": "Design engineering for Claude Code. Build interfaces with craft, memory, and enforcement."
+    "description": "Design engineering for Claude Code. Build interfaces with craft, visual hierarchy, and a strict design review."
   },
   "owner": {
     "name": "Damola Akinleye",
@@ -11,8 +11,8 @@
   "plugins": [
     {
       "name": "interface-design",
-      "description": "Design engineering for Claude Code. Build interfaces with craft, memory, and enforcement. Maintains consistent design decisions across sessions.",
-      "version": "2026.6.12.1248",
+      "description": "Design engineering for Claude Code. Build production-grade interfaces with strong visual hierarchy, review craft against an approval bar, and strip AI design slop. Maintains design decisions across sessions.",
+      "version": "2026.6.20.1331",
       "author": {
         "name": "Damola Akinleye",
         "url": "https://github.com/Dammyjay93"
