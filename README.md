@@ -29,7 +29,7 @@ When you build UI with a coding agent, design decisions get made: spacing values
 
 1. **Craft** — Principle-based design that produces professional, polished interfaces with real visual hierarchy
 2. **Visual direction** — When an image-generation tool is available, explore direction boards, UI references, and critique paintovers
-3. **Memory** — Save decisions to `.interface-design/system.md`, then reload them when the skill runs
+3. **Memory** — Save decisions to `.design-sync/conventions.md`, then reload them when the skill runs
 4. **Consistency** — UI changes follow the same principles throughout the session
 5. **Sync** — Reconcile the coded design system with a [Claude Design](https://claude.ai/design) design-system project, in either direction, one component at a time
 
@@ -58,7 +58,7 @@ See the difference: **[interface-design.dev/examples.html](https://interface-des
 
 The same design system often lives twice — here in code, and in a [Claude Design](https://claude.ai/design) design-system project on the web. This skill is the middle ground between them. `/interface-design:design-sync` reconciles the two: it pulls web design into coded components, or pushes the coded system back to the web, following Claude Design's own sync discipline — foundation before components, one component at a time, `finalize_plan`-gated, never a wholesale replace.
 
-A `.design-sync` manifest at the repo root records the binding (which project, which paths, last-synced etags) so each sync is a small diff. See [`reference/design-sync-manifest.md`](reference/design-sync-manifest.md) for its shape.
+A `.design-sync/` directory at the repo root records the binding — which project and which components, in `config.json` — plus the tool's own content-hash state, so each sync is a small diff. See [`reference/design-sync-manifest.md`](reference/design-sync-manifest.md) for its shape.
 
 > This is a fork of [`Dammyjay93/interface-design`](https://github.com/Dammyjay93/interface-design) tracking upstream, with the Claude Design sync bridge added.
 
@@ -172,16 +172,16 @@ Restart the target agent after manual installation.
 
 When an agent uses interface-design:
 
-**If system.md exists:**
+**If conventions.md exists:**
 ```
 ✓ Reads skill files and principles
-✓ Loads .interface-design/system.md
+✓ Loads .design-sync/conventions.md
 ✓ Applies established patterns
 ✓ Keeps design choices explicit
 ✓ Offers to save new patterns
 ```
 
-**If no system.md:**
+**If no conventions.md:**
 ```
 1. Reads skill files and principles
 2. Assesses project context
@@ -213,7 +213,7 @@ Spacing: 8px base
 
 [Builds dashboard with consistent depth, spacing, surfaces]
 
-Want me to save these patterns to .interface-design/system.md?
+Want me to save these patterns to .design-sync/conventions.md?
 
 [You: y]
 
@@ -226,7 +226,7 @@ Want me to save these patterns to .interface-design/system.md?
 You: "Add a settings page"
 
 Agent:
-✓ Loaded system.md
+✓ Loaded conventions.md
 
 Depth: borders-only
 Surfaces: using established scale
@@ -242,9 +242,9 @@ The system **remembers** across sessions.
 
 ---
 
-## System File
+## Foundation Doc
 
-After establishing direction, your decisions live in `.interface-design/system.md`:
+After establishing direction, your decisions live in `.design-sync/conventions.md`:
 
 ```markdown
 # Design System
@@ -277,7 +277,7 @@ Scale: 4, 8, 12, 16, 24, 32
 - Radius: 8px
 ```
 
-This file is loaded by the interface-design skill when relevant. Claude Code and Codex use it to maintain consistency.
+This file is loaded by the interface-design skill when relevant, and doubles as the design system's README header when synced to a Claude Design project. Claude Code and Codex use it to maintain consistency.
 
 ---
 
@@ -336,7 +336,7 @@ The skill infers direction from project context, but you can customize:
 
 See live examples at **[interface-design.dev/examples.html](https://interface-design.dev/examples.html)**
 
-For system file templates, see `reference/examples/`:
+For foundation doc templates, see `reference/examples/`:
 - **[system-precision.md](reference/examples/system-precision.md)** — Dashboard/admin interfaces
 - **[system-warmth.md](reference/examples/system-warmth.md)** — Collaborative/consumer apps
 
@@ -358,7 +358,7 @@ rm -rf ~/.claude/skills/design-principles
 npx skills add https://github.com/dammyjay93/interface-design --skill interface-design --agent claude-code -g
 ```
 
-Your system.md files (if any) continue to work. Rename `.ds-engineer/` to `.interface-design/` if you have not already.
+Your existing foundation docs (any `.interface-design/system.md` or `.ds-engineer/` from earlier versions) still work — move their content into `.design-sync/conventions.md` to pick up on the current path.
 
 ---
 

@@ -26,7 +26,7 @@ Five steps, in order. Don't skip to the dimension checklist — the procedure is
 Establish two things:
 
 - **What's under review** — the current build, a named component, or the branch's UI changes. Bound it.
-- **What it's trying to be** — read `.interface-design/system.md` if it exists, and infer the intended user, task, and feel. *You review against the design's own intent, not a generic ideal.* A deliberately dense trading terminal is not failing for being dense. If intent is genuinely unknowable, say so and review against general craft — but note the assumption.
+- **What it's trying to be** — read `.design-sync/conventions.md` if it exists, and infer the intended user, task, and feel. *You review against the design's own intent, not a generic ideal.* A deliberately dense trading terminal is not failing for being dense. If intent is genuinely unknowable, say so and review against general craft — but note the assumption.
 
 ## Step 2 — See the whole first
 
@@ -88,7 +88,7 @@ Then **filter out false positives** — do *not* raise these:
 - **Taste, not defect.** "I'd have used a different font / accent / layout." If the choice is coherent with the intent and executed well, it is not a finding, even if you'd have chosen differently. Distinctive ≠ wrong.
 - **A bold choice working as intended.** A saturated palette or dramatic scale that matches a stated bold intent is a success, not a flag.
 - **Outside the scope** you set in Step 1, or on lines the branch didn't touch (for a diff review).
-- **Ratified by `system.md`.** If the project's design system already decided it, it's a decision, not a defect.
+- **Ratified by `conventions.md`.** If the project's design system already decided it, it's a decision, not a defect.
 - **A lint/format/compile concern** — owned elsewhere, not a design finding.
 
 If you can't say *why a finding costs the user or makes the UI read as generated*, it's taste — cut it. Prefer a few high-conviction findings over a long cosmetic list. A short review that names the three things actually holding the design back beats forty nitpicks.

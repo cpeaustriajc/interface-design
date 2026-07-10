@@ -49,7 +49,7 @@ The point is to remove the generic, not to flatten every choice into a default. 
 - **An intentional deviation that has a reason** — a one-off radius, a deliberately heavier border on a focal card, asymmetric padding where content demands it.
 - **Anything outside the diff.** Pre-existing slop in untouched code is out of scope unless the user asks. Stay in the lines that moved.
 - **Anything a linter or formatter owns** — quote style, import order, trailing commas. Not your job here.
-- **Choices the project's `.interface-design/system.md` already ratifies.** If it's in the system, it's a decision, not slop.
+- **Choices the project's `.design-sync/conventions.md` already ratifies.** If it's in the system, it's a decision, not slop.
 
 This filter is half the skill. Generated UI looks generated because it defaulted; it does *not* become good by defaulting harder. When in doubt, leave it and note it rather than churn it.
 
