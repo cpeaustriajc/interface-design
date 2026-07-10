@@ -31,6 +31,7 @@ When you build UI with a coding agent, design decisions get made: spacing values
 2. **Visual direction** — When an image-generation tool is available, explore direction boards, UI references, and critique paintovers
 3. **Memory** — Save decisions to `.interface-design/system.md`, then reload them when the skill runs
 4. **Consistency** — UI changes follow the same principles throughout the session
+5. **Sync** — Reconcile the coded design system with a [Claude Design](https://claude.ai/design) design-system project, in either direction, one component at a time
 
 Make choices once. Apply them consistently.
 
@@ -50,6 +51,16 @@ Make choices once. Apply them consistently.
 - Consistent depth and surface treatment throughout
 
 See the difference: **[interface-design.dev/examples.html](https://interface-design.dev/examples.html)**
+
+---
+
+## Claude Design Sync
+
+The same design system often lives twice — here in code, and in a [Claude Design](https://claude.ai/design) design-system project on the web. This skill is the middle ground between them. `/interface-design:design-sync` reconciles the two: it pulls web design into coded components, or pushes the coded system back to the web, following Claude Design's own sync discipline — foundation before components, one component at a time, `finalize_plan`-gated, never a wholesale replace.
+
+A `.design-sync` manifest at the repo root records the binding (which project, which paths, last-synced etags) so each sync is a small diff. See [`reference/design-sync-manifest.md`](reference/design-sync-manifest.md) for its shape.
+
+> This is a fork of [`Dammyjay93/interface-design`](https://github.com/Dammyjay93/interface-design) tracking upstream, with the Claude Design sync bridge added.
 
 ---
 

@@ -1,13 +1,13 @@
 {
   "name": "interface-design",
-  "description": "Design engineering for Claude Code. Build production-grade interfaces with strong visual hierarchy, review craft against an approval bar, and strip AI design slop. Self-contained — direction, hierarchy, tokens, polish, and motion in one skill.",
-  "version": "2026.6.20.1332",
+  "description": "Design engineering for Claude Code. Build production-grade interfaces with strong visual hierarchy, review craft against an approval bar, strip AI design slop, and sync the coded design system with a Claude Design project. Self-contained — direction, hierarchy, tokens, polish, motion, and web/code sync in one skill.",
+  "version": "2026.7.10.1037",
   "author": {
     "name": "Damola Akinleye",
     "url": "https://github.com/Dammyjay93"
   },
-  "homepage": "https://github.com/Dammyjay93/interface-design",
-  "repository": "https://github.com/Dammyjay93/interface-design",
+  "homepage": "https://github.com/cpeaustriajc/interface-design",
+  "repository": "https://github.com/cpeaustriajc/interface-design",
   "commands": "./.claude/commands",
   "skills": "./.claude/skills"
 }
